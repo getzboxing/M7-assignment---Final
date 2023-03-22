@@ -5,9 +5,7 @@ let table = document.querySelector('table')
 // SET A COUNT VARIABLE TO DISPLAY NEXT TO EMPLOYEES HEADER
 let total = 0
 
-window.addEventListener('load', (e) => {
-  checkMessageDisplay()
-})
+window.addEventListener('load', (e) => {})
 
 // ADD EMPLOYEE
 form.addEventListener('submit', (e) => {
@@ -21,8 +19,8 @@ form.addEventListener('submit', (e) => {
   let department = document.querySelector('#department').value
 
   // INSERT A NEW ROW AT THE END OF THE EMPLOYEES TABLE
-  //   let tr = document.createElement('tr')
-  let row = table.insertRow()
+  
+  let row = table.insertRow(0)
   // INSERT A CELL FOR EACH ITEM WITHIN THE NEW ROW
   let cellID = row.insertCell()
   row.appendChild(cellID)
@@ -86,6 +84,7 @@ function onDeleteRow(e) {
   }
   btn = e.target
   btn.closest('tr').remove()
+
   let output = document.querySelector('#empCount')
   output.textContent = output.textContent - 1
 
